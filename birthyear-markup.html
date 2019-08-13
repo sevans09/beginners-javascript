@@ -13,9 +13,37 @@
 			name = "number" id = "number"/>
 			<input type = "button" value = "Find Year" id = "button"/>
 		</form>
-		<center><p id = "year">Year</p></center>
+		<center><p id ="year">Year</p></center>
 
 	</center>
+
+	<script type = "text/javascript">
+		function calculate() {
+
+			var number = document.getElementById("number").value;
+
+			if(number == "" || number=="0") {
+				window.alert("Please input a valid age");
+				return;
+			}
+
+			var date = new Date().getFullYear();
+
+			var birthYear = number - date;
+
+			document.getElementById("year").style.display = "block";
+			document.getElementById("year").innerHTML = "Your birth year is " + birthYear;
+
+		}
+
+		
+
+		document.getElementById("year").style.display = "none";
+
+		document.getElementById("button").onclick = function() {	calculate();	};
+
+
+	</script> 
 
 </body>
 </html>
